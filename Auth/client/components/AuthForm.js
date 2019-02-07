@@ -3,21 +3,20 @@ import React, { Component } from 'react';
 class AuthForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
+
+    this.state = { email: '', password: '' };
   }
 
   onSubmit(event) {
     event.preventDefault();
+
     this.props.onSubmit(this.state);
   }
 
   render() {
     return (
       <div className="row">
-        <form onSubmit={this.props.onSubmit.bind(this)} className="col s6">
+        <form onSubmit={this.onSubmit.bind(this)} className="col s6">
           <div className="input-field">
             <input
               placeholder="Email"
